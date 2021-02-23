@@ -1,25 +1,29 @@
 package step.tryFor;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class q11021 {
-    public static void main(String[] args) {
-        /*
-         * 테스트케이스를 입력 받아
-         * 각 테스트케이스는 한줄이며 각줄에 A,B가 주어지고
-         * 모두 입력받은 후 Case #x: A+B를 출력
-         */
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        int[][] input = new int[num][2];
-        for(int i=0; i<num; i++){
-            input[i][0] = sc.nextInt();
-            input[i][1] = sc.nextInt();
+    /*
+     * 테스트케이스를 입력 받아
+     * 각 테스트케이스는 한줄이며 각줄에 A,B가 주어지고
+     * 모두 입력받은 후 Case #x: A+B를 출력
+     */
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuffer sb = new StringBuffer();
+        StringTokenizer st;
+        int num = Integer.parseInt(br.readLine());
+        for(int i=1; i<=num; i++){
+            st = new StringTokenizer(br.readLine(), " ");
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            String s = "Case #"+i+": "+(a+b);
+            sb.append(s).append('\n');
         }
-        int sum = 0;
-        for(int j=0; j<num; j++){
-            sum = input[j][0]+input[j][1];
-            System.out.println("Case #"+(j+1)+": "+sum);
-        }
+        System.out.println(sb);
+        br.close();
     }
 }

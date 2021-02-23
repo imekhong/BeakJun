@@ -1,20 +1,19 @@
 package step.tryFor;
 
-import java.util.Scanner;
+import java.io.*;
 
 public class q8393 {
-    public static void main(String[] args) {
-        /*
-         * 첫 줄에 정수 n을 입력받아
-         * 1부터 n까지 합 출력
-         */
-        Scanner input = new Scanner(System.in);
-        int n, sum=0;
-        n = input.nextInt();
-        input.close();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int n = Integer.parseInt(br.readLine());
+        int sum = 0;
         for(int i=1; i<=n; i++) {
             sum += i;
         }
-        System.out.println(sum);
+        bw.write(String.valueOf(sum));
+        br.close();
+        bw.flush();
+        bw.close();
     }
 }
