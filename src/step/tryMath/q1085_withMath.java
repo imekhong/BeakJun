@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class q1085_tryWithMath {
+public class q1085_withMath {
     /*
      * 직사각형에서 탈출
      * 입력: x,y,w,h
